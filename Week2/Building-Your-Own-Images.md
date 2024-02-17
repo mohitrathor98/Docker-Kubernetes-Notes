@@ -44,3 +44,32 @@ Since docker containers are isolated, we cannot access it's port unless we expos
 #### Note:
 
     EXPOSE 80 in the Dockerfile in the end is optional. It documents that a process in the container will expose this port. But you still need to then actually expose the port with -p when running docker run. So technically, -p is the only required part when it comes to listening on a port. Still, it is a best practice to also add EXPOSE in the Dockerfile to document this behavior.
+
+## Building images and running containers
+
+```
+docker build .
+```
+This is used to build an image from a dockerfile.
+
+`.` --> Path of docker file. Here, it means that the path from where we are running this command has the dockerfile.
+
+After the image is built, we get an image id.
+```
+docker run <image-id>
+````
+This starts a container based upon the image-id provided.
+
+```
+docker stop <container-name>
+```
+This stops the running container.
+
+```
+docker run -p 3000:80 <image-id>
+```
+Here, we are exposing a port of container and accessing on a system port.
+
+`-p` --> For publishing a port
+
+`3000:80` --> System port where we are using the container services is 3000 and 80 is the port where docker container is listening.
