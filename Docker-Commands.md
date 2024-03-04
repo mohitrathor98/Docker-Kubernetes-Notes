@@ -6,6 +6,12 @@ docker run <image_name>
 Docker checks if the image is available locally first, then it checks online at docker hub. If the image is available on the docker hub, docker pulls it and runs the container.
 
 ```
+docker ps
+```
+Lists all the running container on the host.
+
+
+```
 docker ps -a
 ```
 Lists all the containers which ran on the system.
@@ -44,3 +50,14 @@ Here, we are exposing a port of container and accessing on a system port.
 `-p` --> For publishing a port
 
 `3000:80` --> System port where we are using the container services is 3000 and 80 is the port where docker container is listening.
+
+
+```
+docker start <container_name>
+```
+Re-starts the exited container. Container starts in the background -- Detached Mode.
+
+```
+docker run -p 8000:80 -d <image_id>
+```
+Now docker run will start a container in detached mode.
