@@ -1,27 +1,3 @@
-## Basic Docker Commands
-
-```
-docker run <image_name>
-```
-Docker checks if the image is available locally first, then it checks online at docker hub. If the image is available on the docker hub, docker pulls it and runs the container.
-
-```
-docker ps
-```
-Lists all the running container on the host.
-
-
-```
-docker ps -a
-```
-Lists all the containers which ran on the system.
-
-
-```
-docker run -it <image_name>
-```
-The it flag will tell docker that the host need to have an interactive session with the container machine.
-
 ## Building images and running containers
 
 ```
@@ -61,3 +37,8 @@ Re-starts the exited container. Container starts in the background -- Detached M
 docker run -p 8000:80 -d <image_id>
 ```
 Now docker run will start a container in detached mode.
+
+```
+docker run -it <image_name>
+```
+The it flag will tell docker that the host need to have an interactive session with the container machine.
