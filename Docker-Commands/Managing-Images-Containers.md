@@ -14,6 +14,12 @@ docker ps -a
 ```
 
 ```
+docker image inspect <image_id>
+--> To get the details of image
+--> OS, Layers, instructions, etc.
+```
+
+```
 docker stop <container_name1> <container_name2>...
 --> To stop the containers
 ```
