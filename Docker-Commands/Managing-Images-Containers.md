@@ -32,3 +32,7 @@ docker image prune
 docker rm <container_name1> <container_name2>...
 --> To delete a stopped container
 ```
+
+`--rm` : if we provide this flag to `docker run` command, the container will get deleted once it is stopped.
+
+
