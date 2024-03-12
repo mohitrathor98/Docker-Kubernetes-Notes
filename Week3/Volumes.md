@@ -58,3 +58,8 @@ Ex: -v /app/node_modules
 ==> We can create anonymous volumes from the command line like this.
 ==> Here node_modules which got installed during the image creation are preserved.
 ```
+
+![Types of volumes](Types-of-Volumes.png )
+
+
+![Comparison between volume types](Volume-Comparisons.png )
