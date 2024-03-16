@@ -14,6 +14,7 @@ def home():
 def exist():
     return render_template('exists.html')
 
+
 @app.route('/create', methods=['POST'])
 def submit():
     if request.method == 'POST':
@@ -30,6 +31,17 @@ def submit():
             fd.write(feedback_text)
 
         return redirect('/')
+
+
+@app.route('/<path:file_path>')
+def view_file(file_path):
+    try:
+        # Open the file and read its contents
+        with open(file_path, 'r') as file:
+            file_contents = file.read()
+        return render_template('file_view.html', file_contents=file_contents)
+    except FileNotFoundError:
+        return "404 File Not found"
 
 
 if __name__ == "__main__":
