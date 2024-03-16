@@ -1,0 +1,6 @@
+# To skip copying any file inside the image when we use COPY command during image creation
+
+## USE CASE: Avoid copying development scripts or 
+## dependency directories created when running the code on the system
+
+Volumes.md
