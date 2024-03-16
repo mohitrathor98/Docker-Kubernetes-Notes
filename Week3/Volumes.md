@@ -46,6 +46,9 @@ macOS / Linux: -v $(pwd):/app
 Windows: -v "%cd%":/app
 ```
 
+If we want to create a bind mount read only i.e, the containers can only read the files on our host not write on it then we add `:ro` at the end of the bind mount definition
+Ex: `-v <absolute path of the location on host machine>:<location on docker container>:ro`
+
 When we bind mount a volume during the container run, all the operations done inside the app directory of the container becomes invalid.
 ```
 Ex: When we run requirement file during the image creation and suppose it creates some files inside the app directory. Now, when we create a container with bind mount to app directory. All the files gets missing.
@@ -54,7 +57,7 @@ Ex: When we run requirement file during the image creation and suppose it create
 One way to preserve the files created during image build is to create an `anonymous volumes` along with the bind mounts which will mount the specific directories required to preserve.
 
 ```
-Ex: -v /app/node_modules
+Ex: `-v /app/node_modules`
 ==> We can create anonymous volumes from the command line like this.
 ==> Here node_modules which got installed during the image creation are preserved.
 ```
