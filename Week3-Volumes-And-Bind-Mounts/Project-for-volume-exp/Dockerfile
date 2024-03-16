@@ -1,17 +1,11 @@
-FROM node:14
+FROM  faucet/python3
 
 WORKDIR /app
 
-COPY package.json .
+COPY . /app
 
-RUN npm install
+RUN pip install Flask
 
-COPY . .
+CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
 
-EXPOSE 80
-
-# VOLUME [ "/app/node_modules" ]
-
-VOLUME ["/temp"]
-
-CMD [ "npm", "start" ]
+EXPOSE 5000

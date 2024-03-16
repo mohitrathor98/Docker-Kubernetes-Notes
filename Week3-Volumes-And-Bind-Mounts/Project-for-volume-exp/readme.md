@@ -7,6 +7,6 @@
 - [X] Save the captured data in the temp directory
 - [X] Check if the file with title as named is present in feedback, if not save the feedback there.
 
-- [ ] Create a dockerfile to do this stuff.
+- [X] Create a dockerfile to do this stuff.
 
 - [ ] Simulate the Volume concepts
