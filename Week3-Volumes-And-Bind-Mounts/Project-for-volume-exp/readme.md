@@ -9,4 +9,6 @@
 
 - [X] Create a dockerfile to do this stuff.
 
+- [X] Change the relative path to absolute using os library
+
 - [ ] Simulate the Volume concepts

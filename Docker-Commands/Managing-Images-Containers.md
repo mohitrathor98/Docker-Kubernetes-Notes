@@ -42,6 +42,12 @@ docker rm <container_name1> <container_name2>...
 `--rm` : if we provide this flag to `docker run` command, the container will get deleted once it is stopped.
 
 ```
+    docker container prune -f
+    ==> Delete all the stopped container
+```
+
+
+```
 docker cp demo/. container_name:/home/test
 --> Copy from demo directory of host to /home/test directory of the container
 ```

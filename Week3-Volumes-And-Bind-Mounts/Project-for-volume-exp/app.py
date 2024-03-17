@@ -18,16 +18,23 @@ def exist():
 @app.route('/create', methods=['POST'])
 def submit():
     if request.method == 'POST':
+        script_dir = os.getcwd()
         feedback_title = request.form['title']
         feedback_text = request.form['text']
 
-        with open(f"temp/{feedback_title}.txt", 'w') as fd:
+        temp_feedback_file = os.path.join(
+            script_dir, 'temp',
+            f'{feedback_title}.txt')
+
+        with open(temp_feedback_file, 'w') as fd:
             fd.write(feedback_text)
 
-        if f"{feedback_title}.txt" in os.listdir('feedback'):
+        feedback_dir = os.path.join(script_dir, 'feedback')
+        if f"{feedback_title}.txt" in os.listdir(feedback_dir):
             return redirect('/exists')
 
-        with open(f"feedback/{feedback_title}.txt", 'w') as fd:
+        feedback_file = os.path.join(feedback_dir, f"{feedback_title}.txt")
+        with open(feedback_file, 'w') as fd:
             fd.write(feedback_text)
 
         return redirect('/')

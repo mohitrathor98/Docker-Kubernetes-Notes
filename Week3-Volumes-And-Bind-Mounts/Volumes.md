@@ -37,6 +37,8 @@ To create a named volume, while starting the container we provide arguments to t
 
 `-v <absolute path of the location on host machine>:<location on docker container>`
 
+`docker run -p 5000:5000 --name volumes -v "$(pwd)":/app volume-app:second`
+
 We should ensure that docker has access to the path on host machine.
 
 ```
