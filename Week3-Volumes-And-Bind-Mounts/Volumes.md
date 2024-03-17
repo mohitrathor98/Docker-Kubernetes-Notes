@@ -27,6 +27,8 @@ To create a named volume, while starting the container we provide arguments to t
 
 `-v volume-name:path-inside-container`
 
+`docker run -p 3000:5000 --name named-volume -v Feedback:/app volume-app:second`
+
 #### Bind mounts
 
     -- User or developer define the path of the volume on the host machine
