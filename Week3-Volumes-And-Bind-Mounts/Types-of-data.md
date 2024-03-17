@@ -11,7 +11,7 @@
 <ul>
 <li>Data which we take or create when the container is running.</li>
 <li>These are specific to that container.</li>
-<li>Once the container is exited or deleted the data gets destroyed.</li>
+<li>Once the container is deleted the data gets destroyed.</li>
 <li>Ex: user inputs, temp DBS.</li>
 </ul>
 
