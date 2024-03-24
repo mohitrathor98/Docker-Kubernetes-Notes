@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install Flask
+RUN pip install Flask pymongo requests
 
 CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
 
