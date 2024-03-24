@@ -16,4 +16,4 @@
 
 ##### Instead of IP of the other containers, we provide the `name` of it in the locations we are trying to communicate with other containers.
 
-
+##### To Connect an already running container to the network: `docker network connect <network-name> <container-name>`
