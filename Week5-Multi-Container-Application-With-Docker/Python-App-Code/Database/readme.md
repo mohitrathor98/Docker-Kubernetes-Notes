@@ -12,3 +12,6 @@
     Modifying /etc/mongod.conf file present inside the mongo container, using a dockerfile to replace it.
     security:
         authorization: enabled
+
+
+`docker run -d -v mongodb_data:/data/db --name mongodb custom-mongo`
