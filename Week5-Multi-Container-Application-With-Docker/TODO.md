@@ -3,10 +3,10 @@
 #### TODO:
 
 ```
-[ ] A mongoDB container
+[X] A mongoDB container
 
-    [ ] Data should persist if we remove container
-    [ ] Access should be limited for users -- Authentication
+    [X] Data should persist if we remove container
+    [X] Access should be limited for users -- Authentication
 ```  
 
 ```
