@@ -24,8 +24,9 @@
 
     [X] A React application that runs on the browser
     [X] A label, textfield and submit button
-    [ ] Below of the submit button list of goals, a message if empty
-    [ ] Communicates with the backend API to add, view and delete goals
-    [ ] If we click on goals ==> It gets deleted.
+    [X] Below of the submit button list of goals, a message if empty
+    [X] If we click on goals ==> It gets deleted.
+    [ ] Containerize the React APP
     [ ] Live updates when the source code changes.
+    [ ] Communicates with the backend API to add, view and delete goals
 ```
