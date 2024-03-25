@@ -9,3 +9,12 @@
     npm start
 
     ==> From the react project directory
+
+
+### Modify App.js to add new components to the app
+
+### How to install the react dependencies for already created project?
+
+    Go to the react project directory and run (provided package.json is present)
+
+    npm install
