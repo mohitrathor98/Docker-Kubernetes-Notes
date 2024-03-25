@@ -5,6 +5,7 @@ body {
   align-items: center; 
   height: 100vh; 
   margin: 0; 
+  text-align: center;
 }
 
 .form-container {
@@ -38,8 +39,17 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 100%;
+  margin-bottom: 8px; /* Add spacing between buttons */
 }
 
 .form-container button:hover {
   background-color: #0056b3;
+}
+
+.no-goals-label {
+  margin-top: 50px; /* Adjust top margin for vertical centering */
+}
+
+#goal-buttons {
+  background-color: #28a745;
 }
