@@ -22,10 +22,10 @@
 ```
 [ ] Frontend -- Single Page Web Application based upon React
 
-    [ ] A React application that runs on the browser
+    [X] A React application that runs on the browser
+    [X] A label, textfield and submit button
+    [ ] Below of the submit button list of goals, a message if empty
     [ ] Communicates with the backend API to add, view and delete goals
-    [ ] A label, textfield and submit button
-    [ ] Below button list of goals, a message if empty
     [ ] If we click on goals ==> It gets deleted.
     [ ] Live updates when the source code changes.
 ```
