@@ -20,6 +20,6 @@
     npm install
 
 #### Commands
-`docker run -d -v mongodb_data:/data/db --name mongodb custom-mongo`
+`docker build -t "react-goal-ap:1.0" .`
 
 `docker run -d -p 3000:3000 --name "goal-frontent" react-goal-ap:1.0`
