@@ -17,6 +17,8 @@
     [ ] Also store a log file -- Backend events of GET, POST, etc.
     [ ] The log file should persist
     [ ] Live source code update
+
+    [ ] When interacting with database, application provides credentials.
 ```
 
 ```
