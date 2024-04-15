@@ -2,7 +2,7 @@ from pymongo import MongoClient
 # pymongo needs to be installed
 
 
-def mongo_intercation(operation, data=None):
+def Mongo_Connect(operation, data=None):
     client = MongoClient('mongodb://172.17.0.2:27017/')
     db = client['Goals']
 
