@@ -12,6 +12,11 @@ def home():
     return "An Application to Store, View and Delete Goals"
 
 
+@app.route('/sample')
+def sample():
+    return json.dumps({'goal': "goal-name"})
+
+
 @app.route('/store', methods=['POST'])
 def store():
     if request.is_json:

@@ -4,12 +4,5 @@
 
     Takes request to set, view and delete goals
 
-##### Set Goal Request
-
-
-
-##### View Goal Request
-
-
-##### Delete Goals
+`/sample` to see json data for set or delete goal
 

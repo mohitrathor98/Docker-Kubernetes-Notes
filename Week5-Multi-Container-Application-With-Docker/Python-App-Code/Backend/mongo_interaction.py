@@ -11,4 +11,12 @@ def Mongo_Connect(operation, data=None):
     elif operation == "delete":
         return "delete"
     else:
-        return "view"
+        return view(db['goal'])
+
+
+def view(collection):
+    data = []
+    cursor = collection.find()
+    for document in cursor:
+        data.append(document)
+    return data
