@@ -1,8 +1,6 @@
 from pymongo import MongoClient
 # pymongo needs to be installed
 
-import json
-
 
 def Mongo_Connect(operation, data=None):
     container_name = 'mongodb'
@@ -26,5 +24,5 @@ def view(collection):
 
 
 def store(collection, data):
-    result = collection.insert_one(json.dumps(data))
-    return {"stored": result}
+    result = collection.insert_one(data)
+    return f"Inserted the data. ID: {result.inserted_id}"

@@ -65,7 +65,7 @@ def get_data(db):
         collection = db[col]
         cursor = collection.find()
         for document in cursor:
-            data.append(document)
+            data.append(str(document))
     return data
 
 
