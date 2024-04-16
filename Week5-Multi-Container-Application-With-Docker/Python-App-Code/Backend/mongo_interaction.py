@@ -19,7 +19,7 @@ def view(collection):
     data = []
     cursor = collection.find()
     for document in cursor:
-        data.append(document)
+        data.append(str(document))
     return data
 
 
