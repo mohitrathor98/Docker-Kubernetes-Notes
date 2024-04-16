@@ -36,3 +36,7 @@ def delete():
         return mongo_interaction.Mongo_Connect("delete", request.json)
     else:
         return json.dumps({'error': 'Request must contain JSON data'})
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
