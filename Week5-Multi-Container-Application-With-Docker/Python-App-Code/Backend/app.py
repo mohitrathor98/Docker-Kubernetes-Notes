@@ -25,7 +25,8 @@ def sample():
 def store():
     log_request(request)
     if request.is_json:
-        return mongo_interaction.Mongo_Connect("store", request.json)
+        return json.dumps(mongo_interaction.Mongo_Connect("store",
+                                                          request.json))
     else:
         return json.dumps({'error': 'Request must contain JSON data'})
 

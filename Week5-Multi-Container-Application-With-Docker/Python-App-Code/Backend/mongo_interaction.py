@@ -8,7 +8,7 @@ def Mongo_Connect(operation, data=None):
     db = client['Goals']
 
     if operation == "store":
-        return "store"
+        return store(db['goal'], data)
     elif operation == "delete":
         return "delete"
     else:
@@ -21,3 +21,8 @@ def view(collection):
     for document in cursor:
         data.append(document)
     return data
+
+
+def store(collection, data):
+    result = collection.insert_one(data)
+    return {"stored": result}
