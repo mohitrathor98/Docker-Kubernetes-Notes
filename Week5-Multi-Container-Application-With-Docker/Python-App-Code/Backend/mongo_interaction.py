@@ -3,7 +3,8 @@ from pymongo import MongoClient
 
 
 def Mongo_Connect(operation, data=None):
-    client = MongoClient('mongodb://172.17.0.2:27017/')
+    container_name = 'mongodb'
+    client = MongoClient(f'mongodb://{container_name}:27017/')
     db = client['Goals']
 
     if operation == "store":

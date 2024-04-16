@@ -15,3 +15,7 @@
 
 
 `docker run -d -v mongodb_data:/data/db --name mongodb custom-mongo`
+
+To restart the same container again: `docker start mongodb`
+
+To run the container as part of a network: `docker run -d --network mongo-net -v mongodb_data:/data/db --name mongodb custom-mongo`
