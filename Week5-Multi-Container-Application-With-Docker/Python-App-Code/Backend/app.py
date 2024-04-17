@@ -28,7 +28,7 @@ def store():
         data = mongo_interaction.Mongo_Connect("store", request.json)
     else:
         data = json.dumps({'error': 'Request must contain JSON data'})
-    log_request(data)
+    log_response(data)
     return data
 
 
@@ -36,7 +36,7 @@ def store():
 def view():
     log_request(request)
     data = mongo_interaction.Mongo_Connect("view")
-    log_request(data)
+    log_response(data)
     return data
 
 
@@ -47,12 +47,16 @@ def delete():
         data = mongo_interaction.Mongo_Connect("delete", request.json)
     else:
         data = json.dumps({'error': 'Request must contain JSON data'})
-    log_request(data)
+    log_response(data)
     return data
 
 
 def log_request(req):
     logging.info(f"{req.method} request to {req.url} with data: {req.data}")
+
+
+def log_response(res):
+    logging.info(str(res))
 
 
 if __name__ == "__main__":
