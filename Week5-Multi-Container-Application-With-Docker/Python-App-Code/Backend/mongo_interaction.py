@@ -24,8 +24,8 @@ def view(collection):
 
 
 def store(collection, data):
-    data = view(collection)
-    for values in data:
+    stored_data = view(collection)
+    for values in stored_data:
         if data['goal'].lower() in values.lower():
             return f"Goal already present: ID: {values}"
     result = collection.insert_one(data)
