@@ -25,24 +25,30 @@ def sample():
 def store():
     log_request(request)
     if request.is_json:
-        return mongo_interaction.Mongo_Connect("store", request.json)
+        data = mongo_interaction.Mongo_Connect("store", request.json)
     else:
-        return json.dumps({'error': 'Request must contain JSON data'})
+        data = json.dumps({'error': 'Request must contain JSON data'})
+    log_request(data)
+    return data
 
 
 @app.route('/view', methods=['GET'])
 def view():
     log_request(request)
-    return mongo_interaction.Mongo_Connect("view")
+    data = mongo_interaction.Mongo_Connect("view")
+    log_request(data)
+    return data
 
 
 @app.route('/delete', methods=['POST'])
 def delete():
     log_request(request)
     if request.is_json:
-        return mongo_interaction.Mongo_Connect("delete", request.json)
+        data = mongo_interaction.Mongo_Connect("delete", request.json)
     else:
-        return json.dumps({'error': 'Request must contain JSON data'})
+        data = json.dumps({'error': 'Request must contain JSON data'})
+    log_request(data)
+    return data
 
 
 def log_request(req):
