@@ -7,15 +7,8 @@
 
     MongoDB stores it data file at "/data/db". So, we can create a named volume.
 
-#### FOR Authentication
-
-    Modifying /etc/mongod.conf file present inside the mongo container, using a dockerfile to replace it.
-    security:
-        authorization: enabled
-
-
-`docker run -d -v mongodb_data:/data/db --name mongodb custom-mongo`
+`docker run -d -v mongodb_data:/data/db --name mongodb mongo`
 
 To restart the same container again: `docker start mongodb`
 
-To run the container as part of a network: `docker run -d --network mongo-net -v mongodb_data:/data/db --name mongodb custom-mongo`
+To run the container as part of a network: `docker run -d --network mongo-net -v mongodb_data:/data/db --name mongodb mongo`
