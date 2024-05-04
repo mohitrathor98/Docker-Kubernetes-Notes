@@ -4,7 +4,7 @@ from pymongo import MongoClient
 
 def Mongo_Connect(operation, data=None):
     container_name = 'mongodb'
-    client = MongoClient(f'mongodb://{container_name}:27017/')
+    client = MongoClient(f'mongodb://mongoadmin:secret@{container_name}:27017/')
     db = client['Goals']
 
     if operation == "store":

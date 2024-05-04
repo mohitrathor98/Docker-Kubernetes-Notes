@@ -12,3 +12,12 @@
 To restart the same container again: `docker start mongodb`
 
 To run the container as part of a network: `docker run -d --network mongo-net -v mongodb_data:/data/db --name mongodb mongo`
+
+Authentication:
+
+    -e MONGO_INITDB_ROOT_USERNAME=mongoadmin \
+    -e MONGO_INITDB_ROOT_PASSWORD=secret
+
+`docker run -d --network mongo-net -v mongodb_data:/data/db -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret --name mongodb mongo`
+
+To interact: `mongodb://mongoadmin:secret@{container_name}:27017/`

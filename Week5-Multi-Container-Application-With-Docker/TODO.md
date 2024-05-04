@@ -10,16 +10,16 @@
 ```  
 
 ```
-[ ] Web Application that accepts and returns json Data
+[X] Web Application that accepts and returns json Data
 
-    [ ] Takes request that allows user to set, view and delete goals
+    [X] Takes request that allows user to set, view and delete goals
     [X] Stores the goals into a database
     [X] Also store a log file -- Backend events of GET, POST, etc.
     [X] The log file should persist
     [X] Live source code update
-    [ ] Before storing check if goal is duplicate
+    [X] Before storing check if goal is duplicate
 
-    [ ] When interacting with database, application provides credentials.
+    [X] When interacting with database, application provides credentials.
 ```
 
 ```
