@@ -22,4 +22,4 @@
 #### Commands
 `docker build -t "react-goal-ap:1.0" .`
 
-`docker run -d -p 3000:3000 --name "goal-frontent" react-goal-ap:1.0`
+`docker run -d -p 3000:3000 -v "$(pwd)/src:/app/src" --name "goal-frontent" react-goal-ap:1.0`
