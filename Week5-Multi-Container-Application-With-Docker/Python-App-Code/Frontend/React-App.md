@@ -22,4 +22,9 @@
 #### Commands
 `docker build -t "react-goal-ap:1.0" .`
 
-`docker run -d -p 3000:3000 -v "$(pwd)/src:/app/src" --name "goal-frontent" react-goal-ap:1.0`
+`docker run -d -p 3000:3000 --network mongo-net -v "$(pwd)/src:/app/src" --add-host=host.docker.internal:host-gateway --name "goal-frontend" react-goal-ap:1.0`
+
+#### Debugging
+
+    React APP doesn't run on the server machine, but runs on the browser.
+    So, docker network won't work in case of React APPs.

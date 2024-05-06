@@ -1,24 +1,32 @@
 from flask import Flask, request
+from flask_cors import CORS, cross_origin
+
 
 import json
 import logging
 import mongo_interaction
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 logging.basicConfig(filename='requests.log', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 @app.route('/')
+@cross_origin()
 def home():
     return "An Application to Store, View and Delete Goals"
 
 
 @app.route('/sample', methods=['GET'])
+@cross_origin()
 def sample():
     log_request(request)
-    return json.dumps({'goal': "goal-name"})
+    response = json.dumps({'goal': "goal-name"})
+    log_response(response)
+    return response
 
 
 @app.route('/store', methods=['POST'])

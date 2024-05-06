@@ -12,8 +12,10 @@ function GoalManager() {
 
   const fetchGoals = async () => {
     try {
-      const response = await axios.get('https://your-api-url/goals');
-      setGoalsList(response.data);
+      const response = await fetch('http://192.168.29.203:5000/sample');
+      const resData = await response.json();
+      console.log(resData)
+      setGoalsList(resData);
     } catch (error) {
       console.error('Error fetching goals:', error);
     }
