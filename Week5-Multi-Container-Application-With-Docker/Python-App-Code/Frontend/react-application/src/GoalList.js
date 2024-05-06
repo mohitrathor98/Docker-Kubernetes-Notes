@@ -8,11 +8,10 @@ function GoalList({ goals, onDeleteGoal }) {
         <p className="no-goals-label">No Goals for Today</p>
       ) : (
         <div>
-          {goals.map((goal) => (
-            <div key={goal.id}>
-              <span>{goal.title}</span>
-              <button onClick={() => onDeleteGoal(goal.id)}>Delete</button>
-            </div>
+          {goals.map((goal, index) => (
+            <button key={index} onClick={() => onDeleteGoal(goal)}>
+              {goal}
+            </button>
           ))}
         </div>
       )}

@@ -17,26 +17,32 @@ def Mongo_Connect(operation, data=None):
 
 
 def view(collection):
-    data = []
+    data = {'goal': []}
     cursor = collection.find()
     for document in cursor:
-        data.append(str(document))
+        data['goal'].append(document['goal'])
     return data
 
 
 def store(collection, data):
-    stored_data = view(collection)
-    for values in stored_data:
-        if data['goal'].lower() in values.lower():
-            return f"Goal already present: ID: {values}"
+    if search(collection, data):
+        return f"Goal already present: {data}"
     result = collection.insert_one(data)
     return f"Inserted the data. ID: {result.inserted_id}"
 
 
+def search(collection, data):
+    cursor = collection.find()
+    for document in cursor:
+        if document['goal'].lower() == data['goal'].lower():
+            return document
+    return None
+
+
 def delete(collection, data):
-    result = collection.find_one(data)
-    if result:
-        collection.delete_one(data)
+    available_record = search(collection, data)
+    if available_record:
+        collection.delete_one(available_record)
         return f"Goal '{data['goal']}' deleted successfully."
     else:
         return f"Goal '{data['goal']}' not found in the collection."

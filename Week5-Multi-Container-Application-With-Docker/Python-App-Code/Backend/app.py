@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 
 
@@ -26,7 +26,7 @@ def sample():
     log_request(request)
     response = json.dumps({'goal': "goal-name"})
     log_response(response)
-    return response
+    return jsonify(response)
 
 
 @app.route('/store', methods=['POST'])

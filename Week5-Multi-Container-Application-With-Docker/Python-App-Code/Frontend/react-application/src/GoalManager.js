@@ -12,10 +12,9 @@ function GoalManager() {
 
   const fetchGoals = async () => {
     try {
-      const response = await fetch('http://192.168.29.203:5000/sample');
+      const response = await fetch('http://192.168.29.203:5000/view');
       const resData = await response.json();
-      console.log(resData)
-      setGoalsList(resData);
+      setGoalsList([...resData['goal']]);
     } catch (error) {
       console.error('Error fetching goals:', error);
     }
@@ -23,17 +22,19 @@ function GoalManager() {
 
   const addGoal = async (newGoal) => {
     try {
-      const response = await axios.post('https://your-api-url/goals', { title: newGoal });
-      setGoalsList([...goalsList, response.data]);
+      const response = await axios.post('http://192.168.29.203:5000/store', { 'goal' : newGoal });
+      console.log(response.data);
+      fetchGoals()
     } catch (error) {
       console.error('Error adding goal:', error);
     }
   };
 
-  const deleteGoal = async (id) => {
+  const deleteGoal = async (goals) => {
     try {
-      await axios.delete(`https://your-api-url/goals/${id}`);
-      setGoalsList(goalsList.filter((goal) => goal.id !== id));
+      const response = await axios.post(`http://192.168.29.203:5000/delete`, {'goal': goals});
+      console.log(response.data);
+      fetchGoals()
     } catch (error) {
       console.error('Error deleting goal:', error);
     }
