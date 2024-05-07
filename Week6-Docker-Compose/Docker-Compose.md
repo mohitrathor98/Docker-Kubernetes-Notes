@@ -12,3 +12,13 @@ Automating Multi-Container setups
 
     We can define services, which are containers.
     Each containers can have defined their ports, volumes, env variables, networks, etc.
+
+#### Notes on docker-compose basics
+
+    When we close a compose service, all containers gets deleted by default. So need for --rm
+
+<hr>
+
+    All services defined inside a compose file share a same network. So we don't need to specify them explicitely. But if there are containers required to access different networks then we can specify them using `--networks`
+
+<hr>

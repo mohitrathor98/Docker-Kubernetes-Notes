@@ -1,0 +1,32 @@
+# version of docker-compose
+version: '3.8'
+# parent of containers
+services:
+  # container names, can be anything -- just a label
+  mongodb:
+    image: 'mongo'
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      ## We can write these key-value pairs in two ways
+      ## 1. variable=value ==> In this case we need to provide '-'
+      ## 2. variable: value ==> In this case we don't need to provide '-'
+      ##                    ==> This : creates a yaml object.
+
+      #- MONGO_INITDB_ROOT_USERNAME=mongoadmin
+      #- MONGO_INITDB_ROOT_PASSWORD=secret
+      MONGO_INITDB_ROOT_USERNAME:mongoadmin
+      MONGO_INITDB_ROOT_PASSWORD:secret
+
+    env_file:
+      # We can also provide the environment variables using env files
+      - ./env/mongo.env
+  backend:
+  
+  frontend:
+
+# For named volumes, we need to specify at the end of 
+# the compose file
+# No need to do such things for anonymous and bind mounts
+volumes:
+  data:
