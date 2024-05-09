@@ -1,5 +1,3 @@
-# version of docker-compose
-version: '3.8'
 # parent of containers
 services:
   # container names, can be anything -- just a label
