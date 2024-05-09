@@ -1,6 +1,8 @@
 # parent of containers
 services:
   # container names, can be anything -- just a label
+  # These names can be used to communicate with the other containers
+  # in this compose network.
   mongodb:
     image: 'mongo'
     volumes:
@@ -19,8 +21,35 @@ services:
     env_file:
       # We can also provide the environment variables using env files
       - ./env/mongo.env
+
   backend:
-  
+    # using build we can provide a location of dockerfile from which compose
+    # can build an image.
+    build: ../Week5-Multi-Container-Application-With-Docker/Python-App-Code/Backend
+    
+    # Below way can be used to provide a specific docker file name
+    # build:
+    #  context: ../Week5-Multi-Container-Application-With-Docker/Python-App-Code/Backend
+    #  dockerfile: dockerfile
+    
+    # Providing argument to the docker file
+    #args:
+    #  ARGUMENT_TO_DOCKERFILE: ${value}
+
+    ports:
+      - '5000:5000'
+    
+    volumes:
+      # Bind mount
+      - ../Week5-Multi-Container-Application-With-Docker/Python-App-Code/Backend:/app
+    env_file:
+      - ./env/backend.env
+    
+    # This is used to specify that this container or service is dependent
+    # upon another. So, please start below before starting the current one.
+    depends_on:
+      - mongodb
+
   frontend:
 
 # For named volumes, we need to specify at the end of 

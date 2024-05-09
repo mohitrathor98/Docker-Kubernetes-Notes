@@ -23,6 +23,9 @@ Automating Multi-Container setups
 
 <hr>
 
+    Services name in the compose file can be used to communicate between containers in the same compose network.
+
+
 ### Commands
 
 `docker compose up` : Builds images and containers and starts them
