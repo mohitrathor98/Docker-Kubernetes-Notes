@@ -10,7 +10,7 @@ services:
     
     # This way we can provide custom container names 
     #container_name: mongo
-    environment:
+    #environment:
       ## We can write these key-value pairs in two ways
       ## 1. variable=value ==> In this case we need to provide '-'
       ## 2. variable: value ==> In this case we don't need to provide '-'
@@ -18,8 +18,8 @@ services:
 
       #- MONGO_INITDB_ROOT_USERNAME=mongoadmin
       #- MONGO_INITDB_ROOT_PASSWORD=secret
-      MONGO_INITDB_ROOT_USERNAME:mongoadmin
-      MONGO_INITDB_ROOT_PASSWORD:secret
+    #  MONGO_INITDB_ROOT_USERNAME:mongoadmin
+    #  MONGO_INITDB_ROOT_PASSWORD:secret
 
     env_file:
       # We can also provide the environment variables using env files
@@ -75,4 +75,4 @@ services:
 # the compose file
 # No need to do such things for anonymous and bind mounts
 volumes:
-  data:
+  mongodb_data:

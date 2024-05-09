@@ -2,9 +2,13 @@
 
     By default, docker compose up command starts the container in attached mode. If we provide `-d` flag to it then it starts in detached mode.
 
-`docker compose down`: Stops all the compose services, i.e., containers and removes them as well.
+`docker compose down`: Stops all the compose services, i.e., containers and doesn't remove them.
 
-    Down command deletes containers and networks but doesn't deletes volumes by default.
+`docker compose stop`: Stops and removes all compose services
+
+`docker compose start`: Starts stopped compose services
+
+    Down/Stop command stops/removes containers and networks but doesn't deletes volumes by default.
     To delete volumes with compose down command we need to provide `-v` flag to it.
 
 
