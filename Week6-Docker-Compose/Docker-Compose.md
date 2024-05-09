@@ -38,4 +38,6 @@ Automating Multi-Container setups
     To delete volumes with compose down command we need to provide `-v` flag to it.
 
 
+`docker compose up --build`: This flag ensures that images are built every time compose is getting up. Otherwise, compose will use if any pre-existing image.
 
+`docker compose build`: Only builds images and not start containers.

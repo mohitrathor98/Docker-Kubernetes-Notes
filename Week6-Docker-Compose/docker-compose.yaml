@@ -7,6 +7,9 @@ services:
     image: 'mongo'
     volumes:
       - mongodb_data:/data/db
+    
+    # This way we can provide custom container names 
+    #container_name: mongo
     environment:
       ## We can write these key-value pairs in two ways
       ## 1. variable=value ==> In this case we need to provide '-'
