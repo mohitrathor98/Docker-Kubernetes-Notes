@@ -51,6 +51,22 @@ services:
       - mongodb
 
   frontend:
+    build: ../Week5-Multi-Container-Application-With-Docker/Python-App-Code/Frontend/react-application
+
+    ports:
+      - '3000:3000'
+
+    volumes:
+      - ../Week5-Multi-Container-Application-With-Docker/Python-App-Code/Frontend/react-application/src:/app/src
+
+    depends_on:
+      - backend
+    
+    # To run this specific container in attached mode
+    # The compose will run in detached mode if provided `-d`
+    # but if shell needs to be kept open for app to run we can do this
+    # stdin_open: true
+    # tty: true
 
 # For named volumes, we need to specify at the end of 
 # the compose file

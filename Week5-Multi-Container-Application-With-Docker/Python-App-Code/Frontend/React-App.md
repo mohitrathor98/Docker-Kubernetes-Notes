@@ -22,7 +22,7 @@
 #### Commands
 `docker build -t "react-goal-ap:1.0" .`
 
-`docker run -d -p 3000:3000 --network mongo-net -v "$(pwd)/src:/app/src" --add-host=host.docker.internal:host-gateway --name "goal-frontend" react-goal-ap:1.0`
+`docker run -d -p 3000:3000 --network mongo-net -v "$(pwd)/src:/app/src" --name "goal-frontend" react-goal-ap:1.0`
 
 #### Debugging
 
