@@ -1,0 +1,17 @@
+services:
+  server:
+    # https://hub.docker.com/_/nginx
+    image: 'nginx:stable-alpine'
+    ports:
+      - '8000:80'
+    # To Proviode configuration to the nginx server
+    # that we want php code to show on the web
+    # we need to create a conf file and pass it to
+    # the nginx container
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+  php:
+  mysql:
+  composer:
+  artisian:
+  npm:
