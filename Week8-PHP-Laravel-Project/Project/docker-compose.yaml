@@ -29,6 +29,12 @@ services:
       # anything here.
     #  - '3000:9000'
   mysql:
+    image: mysql:5.7
+    env:
+      # In the env file, we took the env variables from
+      # mysql dockerhub page and provide db name, etc of
+      # our own choice
+      - ./env/mysql.env
   composer:
   artisian:
   npm:
