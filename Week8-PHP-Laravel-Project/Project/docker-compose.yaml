@@ -11,6 +11,23 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
   php:
+    build:
+      context: .
+      dockerfile: Dockerfiles/php.dockerfile
+    volumes:
+      # delegated makes container view of mount less authorative
+      # and there will be delay in things getting written from container
+      # to host machine.
+      # We would not want container to continously writing on the host.
+      - ./src:/var/www/html:delegated
+    #ports:
+      # PHP container listens of port 9000 and nginx needs 3000 exposed
+      # since we mentioned that in the conf file
+      # But When we mention this here, this will mean port 3000 is exposed on host
+      # Not for nginx container to communicate with PHP directly.
+      # Hence, we need to change 3000 to 9000 in nginx conf file, and no need to mention
+      # anything here.
+    #  - '3000:9000'
   mysql:
   composer:
   artisian:
