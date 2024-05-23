@@ -36,7 +36,9 @@ services:
       # our own choice
       - ./env/mysql.env
   composer:
-    build: ./Dockerfiles/composer.dockerfile Week8-PHP-Laravel-Project/Project/Dockerfiles/composer.dockerfile
+    build: 
+      context: .
+      dockerfile: Dockerfiles/composer.dockerfile      
     volumes:
       - ./src:/var/www/html
   #artisian:
