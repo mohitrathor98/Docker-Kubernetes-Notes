@@ -15,3 +15,5 @@
 `docker compose up --build`: This flag ensures that images are built every time compose is getting up. Otherwise, compose will use if any pre-existing image.
 
 `docker compose build`: Only builds images and not start containers.
+
+`docker compose run`: Runs a single service or container

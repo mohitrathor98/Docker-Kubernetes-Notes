@@ -30,11 +30,14 @@ services:
     #  - '3000:9000'
   mysql:
     image: mysql:5.7
-    env:
+    env_file:
       # In the env file, we took the env variables from
       # mysql dockerhub page and provide db name, etc of
       # our own choice
       - ./env/mysql.env
   composer:
-  artisian:
-  npm:
+    build: ./Dockerfiles/composer.dockerfile Week8-PHP-Laravel-Project/Project/Dockerfiles/composer.dockerfile
+    volumes:
+      - ./src:/var/www/html
+  #artisian:
+  #npm:
