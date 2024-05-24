@@ -9,7 +9,14 @@ services:
     # we need to create a conf file and pass it to
     # the nginx container
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      # ro -- read only 
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default/default.conf:ro
+      # Binding our source code to nginx so that nginx has access to the code
+      - ./src:/var/www/html
+    depends_on:
+      - php
+      - mysql
+
   php:
     build:
       context: .
