@@ -26,3 +26,11 @@
 
 # To Run things in smooth way 
     docker composer up -d --build
+
+#### Note: When the container is up for first time, Laravel application needs db migration to run. Once it is run, Laravel gets up and running in the browser.
+##### How to run migration?
+
+    In the browser, refresh 2-3 times, it will ask to run migration
+
+    Or, run the laravel artisian commands to migrate.
+    
