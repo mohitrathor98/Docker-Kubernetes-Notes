@@ -19,3 +19,7 @@
 `docker compose run --rm --build -d server php nginx`
 
     Alternatively we can provide 'depends_on' in one service and it will trigger with other being started.
+
+# View the app at
+
+    <IP>:8000

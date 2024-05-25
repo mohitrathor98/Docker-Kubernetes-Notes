@@ -1,4 +1,4 @@
-FROM PHP:8.2-fpm-alpine
+FROM php:8.2-fpm-alpine
 
 # Standard working directory for web based containers
 WORKDIR /var/www/html
