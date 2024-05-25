@@ -23,3 +23,6 @@
 # View the app at
 
     <IP>:8000
+
+# To Run things in smooth way 
+    docker composer up -d --build
