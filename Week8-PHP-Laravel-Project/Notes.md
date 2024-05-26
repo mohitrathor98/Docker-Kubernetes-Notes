@@ -32,8 +32,9 @@
 
     In the browser, refresh 2-3 times, it will ask to run migration
 
-    Or, run the laravel artisian commands to migrate.
+    Or, run the laravel artisan commands to migrate.
 
+    `docker compose run --rm artisan migrate`
 
 #### Note: putting entrypoint in composer file, overrides the entrypoint in the dockerfile or image being used. Or appends to it if already not present
     

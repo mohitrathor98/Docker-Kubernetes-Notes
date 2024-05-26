@@ -48,17 +48,17 @@ services:
   #     dockerfile: Dockerfiles/composer.dockerfile      
   #   volumes:
   #     - ./src:/var/www/html
-  artisian:
+  artisan:
     build: 
       # requires PHP image so, we will be using same dockerfile
       # as we are using for php service
       context: .
-      dockerfile: php.dockerfile
+      dockerfile: Dockerfiles/php.dockerfile
     volumes:
       - ./src:/var/www/html
     # putting entrypoint here, overrides the entrypoint in the dockerfile
     # or image being used. Or appends to it if already not present
-    entrypoint: ["php", "/var/www/html/artisian", ]
+    entrypoint: ["php", "/var/www/html/artisan", ]
   npm:
     image: node:14
     working_dir: /var/www/html
