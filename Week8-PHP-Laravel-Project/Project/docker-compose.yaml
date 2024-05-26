@@ -59,4 +59,9 @@ services:
     # putting entrypoint here, overrides the entrypoint in the dockerfile
     # or image being used. Or appends to it if already not present
     entrypoint: ["php", "/var/www/html/artisian", ]
-  #npm:
+  npm:
+    image: node:14
+    working_dir: /var/www/html
+    entrypoint: ["npm"]
+    volumes:
+      - ./src/:/var/www/html
