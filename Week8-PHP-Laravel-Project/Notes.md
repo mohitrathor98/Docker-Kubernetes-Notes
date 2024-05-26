@@ -33,4 +33,7 @@
     In the browser, refresh 2-3 times, it will ask to run migration
 
     Or, run the laravel artisian commands to migrate.
+
+
+#### Note: putting entrypoint in composer file, overrides the entrypoint in the dockerfile or image being used. Or appends to it if already not present
     
