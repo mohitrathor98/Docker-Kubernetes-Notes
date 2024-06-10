@@ -20,3 +20,13 @@
     -- Free tier EC2 instance needs to be launched
     -- Type : Amazon linux
     -- Create key-pair for the instance (.pem)
+
+#### 3. Connecting to instance through SSH, installing docker and run container
+
+    -- .pem file genrated should have 600 permission
+    -- ssh -i "first-instance.pem" ec2-user@ec2-3-25-114-88.ap-southeast-2.compute.amazonaws.com
+
+    Installing docker
+
+    `sudo yum install docker`
+    `sudo systemctl start docker`
