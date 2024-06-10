@@ -13,3 +13,10 @@
     2. Configure security group to expose all required ports to WWW.
     3. Connect to instance through SSH, install docker and run container.
 
+
+#### 1. Create and Launch EC2 instance
+
+    -- Create an AWS account
+    -- Free tier EC2 instance needs to be launched
+    -- Type : Amazon linux
+    -- Create key-pair for the instance (.pem)
