@@ -30,3 +30,8 @@
 
     `sudo yum install docker`
     `sudo systemctl start docker`
+
+    -- Pushing our image to docker hub
+    
+    `docker build . -t mohitrathor/node-app-basic`
+    `docker push mohitrathor/node-app-basic`
