@@ -35,3 +35,24 @@
     
     `docker build . -t mohitrathor/node-app-basic`
     `docker push mohitrathor/node-app-basic`
+
+    -- Running the image in EC2
+
+    `docker run -d --rm -p 80:80 mohitrathor/node-app-basic`
+
+    -- To Access the web server running on EC2
+
+     ==> Access public IP address mentioned in the Amazon web console
+
+#### 2. Configuring security group to expose all required ports
+
+    We need to configure security groups for EC2 instance so that we can communicate with that instance.
+    There are two kinds of rules:
+    
+    1. Outbound rules: This allows from which outside resources the EC2 instance can communicate.
+
+    2. Inbound rules: This is what we should configure if we want to communicate with EC2 from outside
+
+    We need to configure an inbound rule for https/http on port 80 for our application to work.
+
+    http://<public IP of ec2 instance>
