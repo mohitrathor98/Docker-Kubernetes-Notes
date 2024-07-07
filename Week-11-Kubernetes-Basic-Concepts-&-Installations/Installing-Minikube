@@ -40,3 +40,31 @@ sudo rpm -Uvh minikube-latest.x86_64.rpm
     2. sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
     3. kubectl version
+
+After running minikube start:
+
+.
+.
+.
+🔥  Creating docker container (CPUs=2, Memory=2200MB) ...
+🐳  Preparing Kubernetes v1.30.0 on Docker 26.1.1 ...
+    ▪ Generating certificates and keys ...
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+🔗  Configuring bridge CNI (Container Networking Interface) ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: default-storageclass, storage-provisioner
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+mohitrathor@fedora:~/workspace/Docker-Kube$ kubectl get pods
+No resources found in default namespace.
+mohitrathor@fedora:~/workspace/Docker-Kube$ kubectl get pods -A
+NAMESPACE     NAME                               READY   STATUS              RESTARTS   AGE
+kube-system   coredns-7db6d8ff4d-wmvmr           0/1     ContainerCreating   0          4s
+kube-system   etcd-minikube                      1/1     Running             0          18s
+kube-system   kube-apiserver-minikube            1/1     Running             0          19s
+kube-system   kube-controller-manager-minikube   1/1     Running             0          18s
+kube-system   kube-proxy-x2frl                   1/1     Running             0          4s
+kube-system   kube-scheduler-minikube            1/1     Running             0          18s
+kube-system   storage-provisioner                1/1     Running             0          16s
+mohitrathor@fedora:~/workspace/Docker-Kube$ 
