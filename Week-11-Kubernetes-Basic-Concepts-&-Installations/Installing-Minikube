@@ -1,0 +1,18 @@
+## Installation
+
+- A cluster needs one management or master node and one or more compute node.
+- We can also have all the things on a single master node.
+- However, this won't be inefficient solution.
+
+We need following tools installed.
+
+1. Docker on all nodes.
+2. kubelet on all compute nodes.
+3. kubectl for sending instructions to master and compute nodes.
+
+
+### Minikube
+
+- Helps in simulating the cluster for devlopment or learning purposes.
+
+#### Installation (or, setting up)
