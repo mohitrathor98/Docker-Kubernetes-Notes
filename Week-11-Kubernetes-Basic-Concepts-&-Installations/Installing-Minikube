@@ -68,3 +68,13 @@ kube-system   kube-proxy-x2frl                   1/1     Running             0  
 kube-system   kube-scheduler-minikube            1/1     Running             0          18s
 kube-system   storage-provisioner                1/1     Running             0          16s
 mohitrathor@fedora:~/workspace/Docker-Kube$ 
+
+
+
+
+### Minikube dashboard
+
+1. Run command: `minikube dashboard`
+2. Start proxy to access from outside: `kubectl proxy --address='0.0.0.0' --disable-filter=true1`
+3. Access using URL:
+192.168.29.203:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/workloads?namespace=default
