@@ -21,10 +21,11 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Fx86-64%2Fstable%2Fbinar
 
 1. Download
 
-To install the latest minikube stable release on x86-64 Linux using Debian package:
+To install the latest minikube stable release on x86-64 Linux using RPM package:
 
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
-sudo dpkg -i minikube_latest_amd64.deb
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
+sudo rpm -Uvh minikube-latest.x86_64.rpm
+
 
 2. Start cluster: `minikube start`
 
