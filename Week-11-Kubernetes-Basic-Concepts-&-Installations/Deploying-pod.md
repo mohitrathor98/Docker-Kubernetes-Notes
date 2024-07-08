@@ -22,7 +22,11 @@ There two ways to create kubernetes objects:
     Note: Here image_name should be present on docker hub and not locally.
           Kubernetes doesn't check on local machine.
 
-2. Declarative Approach: TBD
+2. Declarative Approach: 
+
+    - Writing resource definition files (yaml format)
+    - We can write the details of all objects and their configuration.
+    - Use `kubectl apply -f config.yaml` to create objects.
 
 -- To get deployment: `kubectl get deployment`
 -- To delete deployment: `kubectl delete deployment`
