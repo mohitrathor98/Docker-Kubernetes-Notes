@@ -38,3 +38,10 @@
         `minikube service <dep-name>`
 
 Note: ***Check out different types of services***
+
+#### Scaling
+
+- We can scale pods of already deployed deployment pods.
+- Helps in handling incoming traffic well.
+
+    `kubectl scale <dep_name>/<pod_name> --replicas=<replica_count>`
