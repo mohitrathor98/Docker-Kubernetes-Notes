@@ -120,3 +120,5 @@ Note: ***For Services on minikube, we still need to run the minikube command: `m
 ***Anytime, after the deployment, we can change certain parameters like replicas in configuration file and run the same apply command for it to take affect***
 
 ***To delete the resources created by file: `kubectl delete -f=deployment.yaml,service.yaml`***
+
+***We can have multiple configuration inside one yaml file. They just need to be separated by three dashes.`---`***
