@@ -122,3 +122,16 @@ Note: ***For Services on minikube, we still need to run the minikube command: `m
 ***To delete the resources created by file: `kubectl delete -f=deployment.yaml,service.yaml`***
 
 ***We can have multiple configuration inside one yaml file. They just need to be separated by three dashes.`---`***
+
+#### matchExpressions
+
+- An alternative to matchLabels.
+- This provides different ways to select the objects using labels.
+
+- We can have operator like 'In', 'NotIn', etc.
+- We can have a list of values for key.
+
+  ```
+  matchExpressions:
+    - {key: app, operator: NotIn, values: [Second-pod, first-pod]}
+  ```
