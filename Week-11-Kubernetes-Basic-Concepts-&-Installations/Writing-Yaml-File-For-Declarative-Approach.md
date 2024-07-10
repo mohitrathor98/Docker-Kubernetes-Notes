@@ -90,3 +90,29 @@ Note: ***There will be only one pod per deployment***
             - name: my-dep-container-2
               image: academind/kube-first-app:2
     ```
+
+#### ports
+
+- for services, we need to expose ports.
+- ports takes protocol key as well which is by default `TCP`
+- port key defines on what client port we can connect to
+- targetPort: port on which the application inside the container is listening.
+
+- We can have multiple ports exposed
+
+  ```
+  ports:
+    - protocol: 'TCP'
+      port: 80
+      targetPort: 8080
+    - protocol: 'TCP'
+      port: 5000
+      targetPort: 5000
+  ```
+
+#### type
+
+- Type of service.
+- On same indentation level as ports.
+
+Note: ***For Services on minikube, we still need to run the minikube command: `minikube service dep_name`***

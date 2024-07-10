@@ -1,0 +1,14 @@
+apiVersion: v1 # for services, version is v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  selector:
+    # for services, we don't need to provide
+    # matchLabel key.
+    app: my-dep-pod # Giving pod name for which we are creating the service
+  ports:
+    - protocol: 'TCP'
+      port: 80 # port that will be exposed on machine
+      targetPort: 8080 # port that application inside the container is listening
+  type: LoadBalancer    
