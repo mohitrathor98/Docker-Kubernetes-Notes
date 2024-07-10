@@ -1,0 +1,14 @@
+apiVersion: app/v1
+kind: deployment
+metadata:
+  name: my-dep
+spec: # specifications for deployment object
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: my-dep-pod
+    spec: # specifications for pod object
+      containers:
+        - name: my-dep-container
+          image: academind/kube-first-app:2
