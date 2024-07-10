@@ -116,3 +116,7 @@ Note: ***There will be only one pod per deployment***
 - On same indentation level as ports.
 
 Note: ***For Services on minikube, we still need to run the minikube command: `minikube service service_name`***
+
+***Anytime, after the deployment, we can change certain parameters like replicas in configuration file and run the same apply command for it to take affect***
+
+***To delete the resources created by file: `kubectl delete -f=deployment.yaml,service.yaml`***
