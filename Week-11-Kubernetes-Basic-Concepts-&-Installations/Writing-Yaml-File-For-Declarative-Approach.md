@@ -48,8 +48,19 @@ Note: ***There will be only one pod per deployment***
 - we can define number of replicas of objects needs to be created.
 - can be zero.
 
+##### selector
 
-#### template
+- must be defined in specification of the main object that needs to be created(which is defined in kind).
+
+##### matchLabels:
+
+- A key inside selector.
+- Here, we define labels of the pod which should be controlled by deployment (in this case).
+- Since, deployment takes care of pod re-intialization, scaling, etc, it needs to have control of few pod specifications.
+
+- Deployment will control only those pods whole label matches with what mentioned here.
+
+##### template
 
 - We can define the description of pods for the object
 
@@ -65,6 +76,9 @@ Note: ***There will be only one pod per deployment***
     ```
     spec: # for deployment object
       replicas: 2
+      selector:
+        matchLabels:
+          app: my-dep-pod
       template:
         metadata:
           labels:
