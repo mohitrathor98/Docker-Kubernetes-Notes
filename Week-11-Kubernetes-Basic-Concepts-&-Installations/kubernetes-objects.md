@@ -38,6 +38,7 @@
         `minikube service <dep-name>`
 
 Note: ***Check out different types of services***
+https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
 
 #### Scaling
 
