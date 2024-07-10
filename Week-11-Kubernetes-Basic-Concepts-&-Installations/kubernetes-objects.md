@@ -35,7 +35,7 @@
     - For actual cluster, we will see external IP of the services, so that we can access.
 
     - For minikube, we need to run one additional command to get URL for accessing
-        `minikube service <dep-name>`
+        `minikube service <service-name>`
 
 Note: ***Check out different types of services***
 https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types

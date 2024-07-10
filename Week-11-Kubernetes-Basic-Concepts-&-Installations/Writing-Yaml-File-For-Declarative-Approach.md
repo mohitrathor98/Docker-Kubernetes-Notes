@@ -115,4 +115,4 @@ Note: ***There will be only one pod per deployment***
 - Type of service.
 - On same indentation level as ports.
 
-Note: ***For Services on minikube, we still need to run the minikube command: `minikube service dep_name`***
+Note: ***For Services on minikube, we still need to run the minikube command: `minikube service service_name`***
