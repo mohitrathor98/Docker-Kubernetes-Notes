@@ -135,3 +135,23 @@ Note: ***For Services on minikube, we still need to run the minikube command: `m
   matchExpressions:
     - {key: app, operator: NotIn, values: [Second-pod, first-pod]}
   ```
+
+#### livenessProbe
+
+- Configures how kubernetes should check if container is up and running
+- Without this, it just check if any error occurred in the run of container.
+- However, using liveness probes, we can specify which kind of error to check and which to ignore when restarting the pods.
+
+- Below configuration, will tell k8s to check if we are getting a success code, on http call of '/' on port 8080.
+
+- It will check after 10 second of interval.
+- And wait for 5 seconds initially, when container starts.
+
+  ```
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8080
+      periodSeconds: 10
+      initialDelaySeconds: 5
+  ```

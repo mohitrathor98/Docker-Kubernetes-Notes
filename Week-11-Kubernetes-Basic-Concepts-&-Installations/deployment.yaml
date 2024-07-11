@@ -17,3 +17,12 @@ spec: # specifications for deployment object
       containers:
         - name: my-dep-container
           image: mohitrathor/kube-pod-demo:1
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            periodSeconds: 10
+            initialDelaySeconds: 5
+          # always pulls the latest image of that tag
+          # when the yaml file is applied
+          imagePullPolicy: Always
