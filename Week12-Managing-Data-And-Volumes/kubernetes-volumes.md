@@ -17,3 +17,15 @@
     3. hostPath
 - These types determines how the data is stored in the volumes outside of container.
 - They don't influence how volumes works inside of container.
+
+### Creating volumes in kubernetes
+
+- Volumes are the part of pod.
+- So, we need to define volume where, we are defining the pod inside yaml file.
+
+#### emptyDir volume
+
+- emptyDir creates a new empty directory whenever the pod starts.
+- The data persists as long as pod is alive.
+- Below lines means we want default configuration of this volume type
+    `emptyDir: {}`

@@ -16,3 +16,16 @@ spec:
         - name: dep-volume-container
           image: mohitrathor/kube-pod-volume:latest
           imagePullPolicy: Always
+          volumeMounts:
+              # mountPath: container internal path where data should be written
+            - mountPath: /app/story
+              name: story-volume
+      # volumes are part of pod, so define at same level
+      # as containers.
+      volumes:
+        - name: story-volume
+          # Type of volume: below lines means we want default
+          # configuration of this volume type
+          # emtpyDir: creates a new empty directory whenever
+          #           the pod starts and keeps data as long as pod is alive
+          emptyDir: {}
