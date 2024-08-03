@@ -47,3 +47,9 @@
 - ***This can also be used to have some pre-existing data at the volume path.***
 
 - Downside: Dependent on host, so if multiple compute nodes are there then creates same issue as emptyDir.
+
+#### CSI volume
+
+- Container Storage Interface
+- Allows any type of file storage system to connect with the container.
+    Ex: AWS EFS CSI Driver
