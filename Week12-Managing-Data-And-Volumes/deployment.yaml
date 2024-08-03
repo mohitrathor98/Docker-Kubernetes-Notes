@@ -28,4 +28,11 @@ spec:
           # configuration of this volume type
           # emtpyDir: creates a new empty directory whenever
           #           the pod starts and keeps data as long as pod is alive
-          emptyDir: {}
+          # emptyDir: {}
+
+          hostPath:
+            # This volume type creates volumes on the host machine.
+            # path is the location on host
+            # type is telling to check for the directory if not present create one.
+            - path: /data
+              type: DirectoryOrCreate

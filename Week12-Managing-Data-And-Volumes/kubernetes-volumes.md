@@ -29,3 +29,21 @@
 - The data persists as long as pod is alive.
 - Below lines means we want default configuration of this volume type
     `emptyDir: {}`
+
+- Downside: If there are multiple replicas, and if one of them crashes, then the volume gets inaccessible for a moment.
+
+#### hostPath volume
+
+- Helps to create volume on host machine.
+- This way multiple pod can access same volume.
+    ```
+        hostPath:
+          # path on the host machine
+          path: /data
+          type: DirectoryOrCreate
+          # type means it will check for this directory on host machine and creates if it doesn't exists.
+    ```
+
+- ***This can also be used to have some pre-existing data at the volume path.***
+
+- Downside: Dependent on host, so if multiple compute nodes are there then creates same issue as emptyDir.
