@@ -16,6 +16,9 @@ spec:
         - name: dep-volume-container
           image: mohitrathor/kube-pod-volume:latest
           imagePullPolicy: Always
+          env:
+            - name: STORY_DIR
+              value: 'story'
           volumeMounts:
               # mountPath: container internal path where data should be written
             - mountPath: /app/story
