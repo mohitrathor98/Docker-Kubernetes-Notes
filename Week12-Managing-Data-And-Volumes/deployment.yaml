@@ -17,8 +17,15 @@ spec:
           image: mohitrathor/kube-pod-volume:latest
           imagePullPolicy: Always
           env:
+            # We can define values of the variable using `value` key
+            # or we can take values from config map using `valueFrom` key
             - name: STORY_DIR
-              value: 'story'
+              # value: 'story'
+              valueFrom:
+                configMapKeyRef:
+                  # Take value from data-store-env config map and `folder` key
+                  name: data-store-env
+                  key: folder
           volumeMounts:
               # mountPath: container internal path where data should be written
             - mountPath: /app/story
