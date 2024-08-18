@@ -9,6 +9,8 @@ spec:
     storage: 4Gi
   # Storage type: Block or Filesystem
   volumeMode: Filesystem
+  # storage class needs to be associated with PV: `kubectl get sc`
+  storageClassName: standard
   # Different access modes for this PV
   accessModes:
     - ReadWriteOnce # Multiple pod but single node

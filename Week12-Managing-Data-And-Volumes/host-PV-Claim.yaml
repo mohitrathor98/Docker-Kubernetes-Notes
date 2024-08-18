@@ -6,6 +6,7 @@ spec:
   # name of persistent volume that needs to be claimed.
   # This is claiming by name and called static provisioning
   volumeName: host-pv
+  storageClassName: standard
   accessModes:
     - ReadWriteOnce
   resources:
