@@ -62,3 +62,8 @@
 
 - We can have multiple persistent volumes independent to any pod or node.
 - The pod or node can have persistent volume claims to access the volumes.
+
+    Creating persistent volumes:
+
+    1. Create persistent volume using yaml file(here done for hostPath type).
+    2. Create persistent volume claim using yaml file. 
