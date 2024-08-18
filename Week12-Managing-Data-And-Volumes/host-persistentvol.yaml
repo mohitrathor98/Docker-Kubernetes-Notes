@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: host-pv
+spec:
+  capacity: 
+    # capacity of the persistent volume: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#capacity
+    # upto 1 gigabytes of space can be used for this PV
+    storage: 1Gi
+  # Storage type: Block or Filesystem
+  volumeMode: Filesystem
+  # Different access modes for this PV
+  accessModes:
+    - ReadWriteOnce # Multiple pod but single node
+    - ReadOnlyMany # Multiple nodes can read
+    - ReadWriteMany # Multiple nodes can read/write
+  # Creating persistent volume of hostPath type
+  hostPath:
+    path: /data
+    type: DirectoryOrCreate

@@ -53,3 +53,12 @@
 - Container Storage Interface
 - Allows any type of file storage system to connect with the container.
     Ex: AWS EFS CSI Driver
+
+
+### Persistent Volumes
+
+- We need volumes to be accessible for the pods running on multiple nodes of a cluster.
+- There may be cases where we need pod and node-independent volumes.
+
+- We can have multiple persistent volumes independent to any pod or node.
+- The pod or node can have persistent volume claims to access the volumes.
