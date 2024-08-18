@@ -67,7 +67,17 @@
 
     1. Create persistent volume using yaml file(here done for hostPath type).
     2. Create persistent volume claim using yaml file.
-    3. Connect pod to PV claim using deployment yaml file. 
+    3. Connect pod to PV claim using deployment yaml file.
+    4. Apply the yaml configuration files
+
+        `kubectl apply -f host-pv.yaml`
+        `kubectl apply -f host-pvc.yaml`
+        `kubectl apply -f deployment.yaml`
+
+    5. To check the status
+
+        `kubectl get pv`   : View status of persistent volume
+        `kubectl get pvc`  : View status of persistent volume claim
 
 
 # Storage Class
