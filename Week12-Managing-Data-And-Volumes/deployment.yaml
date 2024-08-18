@@ -36,3 +36,7 @@ spec:
             # type is telling to check for the directory if not present create one.
             - path: /data
               type: DirectoryOrCreate
+
+          # persistent volume, we add claim detail here:
+          # persistentVolumeClaim:
+          #   claimName: host-pvc

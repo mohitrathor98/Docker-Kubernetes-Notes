@@ -66,4 +66,5 @@
     Creating persistent volumes:
 
     1. Create persistent volume using yaml file(here done for hostPath type).
-    2. Create persistent volume claim using yaml file. 
+    2. Create persistent volume claim using yaml file.
+    3. Connect pod to PV claim using deployment yaml file. 
