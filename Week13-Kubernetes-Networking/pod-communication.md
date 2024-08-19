@@ -23,3 +23,8 @@
 
         Pattern of the variables created are: `SERVICE_NAME_SERVICE_HOST` -- All in caps
         Ex: AUTH_SERVICE_SERVICE_HOST
+
+3. Using Domain name (core DNS) - This DNS is known only inside the cluster.
+
+    Domain name of a service is its's service name and namespace: `service-name.namespace`
+    Ex: auth-service.default

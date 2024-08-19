@@ -16,4 +16,6 @@ spec:
         - name: app-users-container
           image: mohitrathor/users-api:latest
           imagePullPolicy: Always
-          
+          env:
+            - name: AUTH_ADDRESS
+              value: "auth-service.default"
