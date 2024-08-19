@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-users
+  template:
+    metadata:
+      labels:
+        app: app-users
+    spec:
+      containers:
+        - name: app-users-container
+          image: mohitrathor/users-api:latest
+          imagePullPolicy: Always
+          
